@@ -18,7 +18,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { RatingGroup } from 'rating-bars-group';
 
-const  bars  =  [
+const bars = [
   { size: 70, color: '#D20025', title: 'Angular'},
   { size: 100, color: '#53D2F9', title: 'React'},
   { size: 90, color: '#37AD70', title: 'Vue'}
