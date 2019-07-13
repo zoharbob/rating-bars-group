@@ -5,7 +5,7 @@
 
  `npm i rating-bars-group -S` or `yarn add rating-bars-group`
 
-  **Usage:**
+  **Props:**
 
 | Prop | Type | Description|Default|Required
 |--|--|--|--|--|
