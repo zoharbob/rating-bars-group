@@ -31,4 +31,4 @@ function App()  {
 }
 ````
 
-[View with Storybook](https://determined-einstein-121cee.netlify.com/?path=/story/storybook-knobs--props)
+<a href="https://determined-einstein-121cee.netlify.com/?path=/story/storybook-knobs--props" target="_blank">View with Storybook</a>
