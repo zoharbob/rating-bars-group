@@ -13,6 +13,6 @@ const bars = [
     { size: 90, color: 'green', title: 'Vue'}
 ];
 
-stories.add('with a button', () => (
+stories.add('Props', () => (
     <RatingGroup bars={bars} empHighest={boolean('empHighest')}/>
 ));
