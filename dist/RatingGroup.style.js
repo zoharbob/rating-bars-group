@@ -1,5 +1,15 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    left: ", "%;\n    top: 0;\n    height: 60%;\n    border-bottom-right-radius: 30px;\n    border-bottom-left-radius: 10px;\n    border-right: #676766 7px solid;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject7() {
   var data = _taggedTemplateLiteral(["\n  margin-left: 10px;\n  width: 30px;\n  padding: 10px;\n  font-size: ", ";\n  font-weight: ", ";\n"]);
 
@@ -41,7 +51,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: 92%;\n  height: 30px;\n  background-color: #e5e5e5;\n  flex: 1;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 92%;\n  height: 30px;\n  background-color: #e5e5e5;\n  flex: 1;\n  position: relative;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -102,4 +112,8 @@ export var Size = styled.div(_templateObject7(), function (_ref6) {
   var empHighest = _ref7.empHighest,
       isMax = _ref7.isMax;
   return empHighest && isMax && 'bold';
+});
+export var Limit = styled.div(_templateObject8(), function (_ref8) {
+  var limit = _ref8.limit;
+  return limit > 100 ? 100 : limit;
 });

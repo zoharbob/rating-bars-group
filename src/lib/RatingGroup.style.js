@@ -18,6 +18,7 @@ export const BarLengthContainer = styled.div`
   height: 30px;
   background-color: #e5e5e5;
   flex: 1;
+  position: relative;
 `;
 
 const rotate = ({ size }) => keyframes`
@@ -52,4 +53,14 @@ export const Size = styled.div`
   padding: 10px;
   font-size: ${({ empHighest, isMax }) => empHighest && isMax ? '12.5px' : '12px'};
   font-weight: ${({ empHighest, isMax }) => empHighest && isMax && 'bold'};
+`;
+
+export const Limit = styled.div`
+    position: absolute;
+    left: ${({limit}) => limit > 100 ? 100 : limit}%;
+    top: 0;
+    height: 60%;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 10px;
+    border-right: #676766 7px solid;
 `;

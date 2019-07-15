@@ -1,12 +1,12 @@
 import React from "react";
 import { mount } from 'enzyme';
 import { RatingGroup } from "./index";
-import { RatingGroupContainer, BarContainer, Bar, BarLengthContainer, Size, BarTitle } from './RatingGroup.style';
+import { RatingGroupContainer, BarContainer, Bar, BarLengthContainer, Size, BarTitle, Limit } from './RatingGroup.style';
 
 const bars = [
-    { size: 30, color: 'red', title: 'john'},
+    { size: 30, color: 'red', title: 'john', limit: 80},
     { size: 100, color: 'green', title: 'dani'},
-    { size: 90, color: 'yellow', title: 'jessica'},
+    { size: 90, color: 'yellow', title: 'jessica', limit: 10},
     { size: 41, color: 'blue', title: 'avi'}
 ];
 
@@ -16,6 +16,7 @@ describe('Rating Group', () => {
 
         const ratingGroup = mount(<RatingGroup bars={bars} />);
         const barSizes = ratingGroup.prop('bars').map(({ size = 0 }) => size);
+        const limitCount = ratingGroup.prop('bars').filter(({ limit }) => limit).length;
 
         expect(ratingGroup.prop('bars')).toEqual(bars);
 
@@ -35,9 +36,10 @@ describe('Rating Group', () => {
         expect(ratingGroupContainer.find(BarLengthContainer).forEach((node, index) => {
             const size = ratingGroup.prop('bars')[index].size;
             const color = ratingGroup.prop('bars')[index].color;
-
             const bar = node.find(Bar);
+            const limitComp = ratingGroup.find(Limit);
 
+            expect(limitComp).toHaveLength(limitCount);
             expect(bar.props()).toMatchObject({ size, color });
         }));
 
@@ -50,6 +52,17 @@ describe('Rating Group', () => {
             expect(node.prop('children')).toEqual([size, '%']);
         }));
 
+    });
+
+    it('passing limitBars prop', () => {
+        const ratingGroup = mount(<RatingGroup bars={bars} limitBars={10} />);
+        const limitComp = ratingGroup.find(Limit);
+        const limitBarsProp = ratingGroup.prop('limitBars');
+
+        expect(limitComp).toHaveLength(ratingGroup.prop('bars').length);
+        limitComp.forEach(node => {
+            expect(node.prop('limit')).toEqual(limitBarsProp);
+        })
     });
 
     it('passing props correctly', () => {
