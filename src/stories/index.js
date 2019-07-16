@@ -14,5 +14,5 @@ const bars = [
 ];
 
 stories.add('Props', () => (
-    <RatingGroup bars={bars} empHighest={boolean('empHighest')} limitBars={number('limitBars', 50)} />
+    <RatingGroup bars={bars} empHighest={boolean('empHighest')} limitBars={number('limitBars', 0)} />
 ));
