@@ -14,17 +14,17 @@ const RatingGroup = ({ bars, empHighest, limitBars }) => {
     return (
         <RatingGroupContainer>
             {
-                bars.map(({size = 0, color = 'black', title, limit}, index) => {
+                bars.map(({size = 0, color = 'black', title = '', limit}) => {
                     const sizeValue = isNaN(size) ? 0 : size;
 
                     return (
-                        <BarContainer key={index}>
+                        <BarContainer key={size + color + title}>
                             <BarTitle>
                                 {title}
                             </BarTitle>
                             <BarLengthContainer>
-                                <Bar size={sizeValue > 100 ? 100 : sizeValue} color={color}/>
-                                {checkLimit(limit || limitBars) ? <Limit limit={limitBars ? limitBars : limit}/> : ''}
+                                <Bar size={sizeValue > 100 ? 100 : sizeValue} color={color} />
+                                {checkLimit(limit || limitBars) ? <Limit limit={limitBars ? limitBars : limit} /> : ''}
                             </BarLengthContainer>
                             <Size
                                 empHighest={empHighest}
