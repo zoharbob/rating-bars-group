@@ -8,7 +8,9 @@
   
   **Props:**  
   
-  
+  | Prop | Type | Description|Default|Required  
+|--|--|--|--|--|--|   
+| `bars` | array | Array of objects which contains `size`, `title`, `color` and `limit` ||true
   
   **Example:**  
 ````  
