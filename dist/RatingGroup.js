@@ -1,11 +1,14 @@
 import _toConsumableArray from "@babel/runtime/helpers/esm/toConsumableArray";
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { RatingGroupContainer, BarContainer, Bar, BarLengthContainer, Size, BarTitle, Limit } from './RatingGroup.style';
 
 var RatingGroup = function RatingGroup(_ref) {
   var bars = _ref.bars,
       empHighest = _ref.empHighest,
-      limitBars = _ref.limitBars;
+      limitBars = _ref.limitBars,
+      className = _ref.className,
+      onFinish = _ref.onFinish;
+  var barRef = useRef(null);
   var barSizes = bars.map(function (_ref2) {
     var _ref2$size = _ref2.size,
         size = _ref2$size === void 0 ? 0 : _ref2$size;
@@ -17,19 +20,29 @@ var RatingGroup = function RatingGroup(_ref) {
     return Math.sign(num) === 1 ? true : false;
   };
 
-  return React.createElement(RatingGroupContainer, null, bars.map(function (_ref3, index) {
+  useEffect(function () {
+    barRef.current.addEventListener('webkitAnimationEnd', onFinish);
+    return function () {
+      barRef.current.removeEventListener('webkitAnimationEnd');
+    };
+  }, []);
+  return React.createElement(RatingGroupContainer, {
+    className: "rating-container ".concat(className)
+  }, bars.map(function (_ref3) {
     var _ref3$size = _ref3.size,
         size = _ref3$size === void 0 ? 0 : _ref3$size,
         _ref3$color = _ref3.color,
         color = _ref3$color === void 0 ? 'black' : _ref3$color,
-        title = _ref3.title,
+        _ref3$title = _ref3.title,
+        title = _ref3$title === void 0 ? '' : _ref3$title,
         limit = _ref3.limit;
     var sizeValue = isNaN(size) ? 0 : size;
     return React.createElement(BarContainer, {
-      key: index
+      key: size + color + title
     }, React.createElement(BarTitle, null, title), React.createElement(BarLengthContainer, null, React.createElement(Bar, {
       size: sizeValue > 100 ? 100 : sizeValue,
-      color: color
+      color: color,
+      ref: barRef
     }), checkLimit(limit || limitBars) ? React.createElement(Limit, {
       limit: limitBars ? limitBars : limit
     }) : ''), React.createElement(Size, {

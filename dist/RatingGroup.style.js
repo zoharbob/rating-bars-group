@@ -31,7 +31,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: 100%;\n  background-color: ", ";\n  border-bottom-right-radius: ", ";\n  border-top-right-radius: ", ";\n  animation-name: ", ";\n  animation-duration: 2s;\n  animation-timing-function: ease-out;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: 100%;\n  background-color: ", ";\n  border-bottom-right-radius: ", ";\n  border-top-right-radius: ", ";\n  -webkit-animation-name: ", ";\n  -webkit-animation-duration: 2s;\n  -webkit-animation-timing-function: ease-out;\n  animation-name: ", ";\n  animation-duration: 2s;\n  animation-timing-function: ease-out;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -85,7 +85,7 @@ export var RatingGroupContainer = styled.div(_templateObject());
 export var BarContainer = styled.div(_templateObject2());
 export var BarLengthContainer = styled.div(_templateObject3());
 
-var rotate = function rotate(_ref) {
+var fillBar = function fillBar(_ref) {
   var size = _ref.size;
   return keyframes(_templateObject4(), size);
 };
@@ -102,7 +102,7 @@ export var Bar = styled.div(_templateObject5(), function (_ref2) {
 }, function (_ref5) {
   var size = _ref5.size;
   return size === 100 ? 0 : '15px';
-}, rotate);
+}, fillBar, fillBar);
 export var BarTitle = styled.div(_templateObject6());
 export var Size = styled.div(_templateObject7(), function (_ref6) {
   var empHighest = _ref6.empHighest,

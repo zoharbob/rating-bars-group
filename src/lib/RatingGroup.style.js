@@ -21,7 +21,7 @@ export const BarLengthContainer = styled.div`
   position: relative;
 `;
 
-const rotate = ({ size }) => keyframes`
+const fillBar = ({ size }) => keyframes`
   from {
     width: 0;
   }
@@ -37,7 +37,10 @@ export const Bar = styled.div`
   background-color: ${({ color }) => color};
   border-bottom-right-radius: ${({ size }) => size === 100 ? 0 : '15px'};
   border-top-right-radius: ${({ size }) => size === 100 ? 0 : '15px'};
-  animation-name: ${rotate};
+  -webkit-animation-name: ${fillBar};
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-name: ${fillBar};
   animation-duration: 2s;
   animation-timing-function: ease-out;
 `;

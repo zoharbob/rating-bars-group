@@ -9,9 +9,13 @@ const bars = [
     { size: 41, color: 'blue', title: 'avi' }
 ];
 
+const onFinish = e => {
+    console.log('finished');
+}
+
 ReactDOM.render(
     <div style={{width: 800, height: 300}}>
-        <RatingGroup bars={bars} empHighest={true} />
+        <RatingGroup bars={bars} empHighest={true} onFinish={onFinish} />
     </div>,
     document.getElementById("root")
 );
