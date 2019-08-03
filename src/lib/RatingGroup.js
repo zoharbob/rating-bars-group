@@ -17,7 +17,7 @@ const RatingGroup = ({ bars, empHighest, limitBars, className, onFinish }) => {
         barRef.current.addEventListener('webkitAnimationEnd', onFinish);
 
         return () => {
-            barRef.current.removeEventListener('webkitAnimationEnd');
+            barRef.current.removeEventListener('webkitAnimationEnd', onFinish);
         }
     }, [])
 

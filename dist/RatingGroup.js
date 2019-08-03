@@ -23,7 +23,7 @@ var RatingGroup = function RatingGroup(_ref) {
   useEffect(function () {
     barRef.current.addEventListener('webkitAnimationEnd', onFinish);
     return function () {
-      barRef.current.removeEventListener('webkitAnimationEnd');
+      barRef.current.removeEventListener('webkitAnimationEnd', onFinish);
     };
   }, []);
   return React.createElement(RatingGroupContainer, {
