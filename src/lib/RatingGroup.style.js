@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const RatingGroupContainer = styled.div`
   width: 100%;
@@ -43,6 +43,16 @@ export const Bar = styled.div`
   animation-name: ${fillBar};
   animation-duration: 2s;
   animation-timing-function: ease-out;
+  
+  ${({ isGlowing }) => isGlowing && 
+    css`
+        transition: box-shadow 0.3s;
+        transition-timing-function: ease;
+        :hover {
+            box-shadow: 2px 2px 10px ${({color}) => color};
+        }
+    `}
+  }
 `;
 
 export const BarTitle = styled.div`

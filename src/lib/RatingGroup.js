@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { RatingGroupContainer, BarContainer, Bar, BarLengthContainer, Size, BarTitle, Limit } from './RatingGroup.style';
 import PropTypes from 'prop-types';
 
-const RatingGroup = ({ bars, empHighest, limitBars, className, onFinish }) => {
+const RatingGroup = ({ bars, empHighest, limitBars, className, onFinish, isGlowing }) => {
 
     const barRef = useRef(null);
 
@@ -33,7 +33,7 @@ const RatingGroup = ({ bars, empHighest, limitBars, className, onFinish }) => {
                                 {title}
                             </BarTitle>
                             <BarLengthContainer>
-                                <Bar size={sizeValue > 100 ? 100 : sizeValue} color={color} ref={barRef} />
+                                <Bar size={sizeValue > 100 ? 100 : sizeValue} color={color} ref={barRef} isGlowing={isGlowing} />
                                 {checkLimit(limit || limitBars) ? <Limit limit={limitBars ? limitBars : limit} /> : ''}
                             </BarLengthContainer>
                             <Size

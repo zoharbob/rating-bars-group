@@ -1,7 +1,17 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
-function _templateObject8() {
+function _templateObject9() {
   var data = _taggedTemplateLiteral(["\n    position: absolute;\n    left: ", "%;\n    top: 0;\n    height: 60%;\n    border-bottom-right-radius: 30px;\n    border-bottom-left-radius: 10px;\n    border-right: #676766 7px solid;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  margin-left: 10px;\n  width: 30px;\n  padding: 10px;\n  font-size: ", ";\n  font-weight: ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -11,7 +21,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: 10px;\n  width: 30px;\n  padding: 10px;\n  font-size: ", ";\n  font-weight: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 10px;\n  width: 50px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -21,7 +31,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  padding: 10px;\n  width: 50px;\n"]);
+  var data = _taggedTemplateLiteral(["\n        transition: box-shadow 0.3s;\n        transition-timing-function: ease;\n        :hover {\n            box-shadow: 2px 2px 10px ", ";\n        }\n    "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -31,7 +41,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: 100%;\n  background-color: ", ";\n  border-bottom-right-radius: ", ";\n  border-top-right-radius: ", ";\n  -webkit-animation-name: ", ";\n  -webkit-animation-duration: 2s;\n  -webkit-animation-timing-function: ease-out;\n  animation-name: ", ";\n  animation-duration: 2s;\n  animation-timing-function: ease-out;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: ", "%;\n  height: 100%;\n  background-color: ", ";\n  border-bottom-right-radius: ", ";\n  border-top-right-radius: ", ";\n  -webkit-animation-name: ", ";\n  -webkit-animation-duration: 2s;\n  -webkit-animation-timing-function: ease-out;\n  animation-name: ", ";\n  animation-duration: 2s;\n  animation-timing-function: ease-out;\n  \n  ", "\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -80,7 +90,7 @@ function _templateObject() {
   return data;
 }
 
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 export var RatingGroupContainer = styled.div(_templateObject());
 export var BarContainer = styled.div(_templateObject2());
 export var BarLengthContainer = styled.div(_templateObject3());
@@ -102,18 +112,24 @@ export var Bar = styled.div(_templateObject5(), function (_ref2) {
 }, function (_ref5) {
   var size = _ref5.size;
   return size === 100 ? 0 : '15px';
-}, fillBar, fillBar);
-export var BarTitle = styled.div(_templateObject6());
-export var Size = styled.div(_templateObject7(), function (_ref6) {
-  var empHighest = _ref6.empHighest,
-      isMax = _ref6.isMax;
+}, fillBar, fillBar, function (_ref6) {
+  var isGlowing = _ref6.isGlowing;
+  return isGlowing && css(_templateObject6(), function (_ref7) {
+    var color = _ref7.color;
+    return color;
+  });
+});
+export var BarTitle = styled.div(_templateObject7());
+export var Size = styled.div(_templateObject8(), function (_ref8) {
+  var empHighest = _ref8.empHighest,
+      isMax = _ref8.isMax;
   return empHighest && isMax ? '12.5px' : '12px';
-}, function (_ref7) {
-  var empHighest = _ref7.empHighest,
-      isMax = _ref7.isMax;
+}, function (_ref9) {
+  var empHighest = _ref9.empHighest,
+      isMax = _ref9.isMax;
   return empHighest && isMax && 'bold';
 });
-export var Limit = styled.div(_templateObject8(), function (_ref8) {
-  var limit = _ref8.limit;
+export var Limit = styled.div(_templateObject9(), function (_ref10) {
+  var limit = _ref10.limit;
   return limit > 100 ? 100 : limit;
 });

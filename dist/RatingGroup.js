@@ -7,7 +7,8 @@ var RatingGroup = function RatingGroup(_ref) {
       empHighest = _ref.empHighest,
       limitBars = _ref.limitBars,
       className = _ref.className,
-      onFinish = _ref.onFinish;
+      onFinish = _ref.onFinish,
+      isGlowing = _ref.isGlowing;
   var barRef = useRef(null);
   var barSizes = bars.map(function (_ref2) {
     var _ref2$size = _ref2.size,
@@ -42,7 +43,8 @@ var RatingGroup = function RatingGroup(_ref) {
     }, React.createElement(BarTitle, null, title), React.createElement(BarLengthContainer, null, React.createElement(Bar, {
       size: sizeValue > 100 ? 100 : sizeValue,
       color: color,
-      ref: barRef
+      ref: barRef,
+      isGlowing: isGlowing
     }), checkLimit(limit || limitBars) ? React.createElement(Limit, {
       limit: limitBars ? limitBars : limit
     }) : ''), React.createElement(Size, {
