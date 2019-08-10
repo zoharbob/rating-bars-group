@@ -14,10 +14,12 @@ const RatingGroup = ({ bars, empHighest, limitBars, className, onFinish, isGlowi
     }
 
     useEffect(() => {
-        barRef.current.addEventListener('webkitAnimationEnd', onFinish);
+        const onFinishCB = () => onFinish();
+
+        barRef.current.addEventListener('webkitAnimationEnd', onFinishCB);
 
         return () => {
-            barRef.current.removeEventListener('webkitAnimationEnd', onFinish);
+            barRef.current.removeEventListener('webkitAnimationEnd', onFinishCB);
         }
     }, [])
 

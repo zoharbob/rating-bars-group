@@ -1,6 +1,6 @@
 {
   "name": "rating-bars-group",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "dependencies": {
     "styled-components": "^4.3.2"
   },
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
-    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-knobs": "^5nb.1.9",
     "@storybook/react": "^5.1.9",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
