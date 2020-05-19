@@ -2,7 +2,7 @@
   "name": "rating-bars-group",
   "version": "0.3.5",
   "dependencies": {
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,13 +28,13 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
+    "@babel/cli": "^7.8.4",
     "@storybook/addon-knobs": "^5nb.1.9",
-    "@storybook/react": "^5.1.9",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@storybook/react": "^5.3.18",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-scripts": "3.0.1"
   },
   "main": "dist/index.js",
