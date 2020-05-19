@@ -22,14 +22,16 @@ var RatingGroup = function RatingGroup(_ref) {
   };
 
   useEffect(function () {
-    var onFinishCB = function onFinishCB() {
-      return onFinish();
-    };
+    if (onFinish) {
+      var onFinishCB = function onFinishCB() {
+        return onFinish();
+      };
 
-    barRef.current.addEventListener('webkitAnimationEnd', onFinishCB);
-    return function () {
-      barRef.current.removeEventListener('webkitAnimationEnd', onFinishCB);
-    };
+      barRef.current.addEventListener('webkitAnimationEnd', onFinishCB);
+      return function () {
+        barRef.current.removeEventListener('webkitAnimationEnd', onFinishCB);
+      };
+    }
   }, []);
   return React.createElement(RatingGroupContainer, {
     className: "rating-container ".concat(className)
